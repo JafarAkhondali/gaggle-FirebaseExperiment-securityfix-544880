@@ -1,0 +1,12 @@
+{
+  "name": "firebaseexperiment",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node serve.js"
+  },
+  "dependencies": {
+    "firebase": "^3.6.0",
+    "stripe": "^4.12.0"
+  }
+}
