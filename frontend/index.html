@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 id="dynamic-greeting">Welcome!</h1>
+<form id="create-order" name="Create Order">
+    <label for="customer_name">Name:</label>
+    <div>
+        <input type="text" id="customer_name" name="customer_name" value="John Smith" placeholder="First Last">
+    </div>
+    <label for="customer_email">Email:</label>
+    <div>
+        <input type="text" id="customer_email" name="customer_email" value="john@smith.com" placeholder="x@x.x">
+    </div>
+
+    <br>
+
+    <label for="product_name">Product:</label>
+    <div>
+        <input type="text" id="product_name" name="product_name" value="Item" placeholder="x">
+    </div>
+    <label for="product_price">Price:</label>
+    <div>
+        <input type="number" id="product_price" name="product_price" value="3.99" step="any" min="0" placeholder="x.xx">
+    </div>
+
+    <br>
+
+    <label for="card_number">Card number:</label>
+    <div>
+        <input type="text" id="card_number" name="card_number" value="4000 0566 5566 5556"
+               placeholder="xxxx xxxx xxxx xxxx">
+    </div>
+    <label for="card_exp_month">Expiry month:</label>
+    <div>
+        <input type="number" id="card_exp_month" name="card_exp_month" value="02" min="0" max="12" placeholder="xx">
+    </div>
+    <label for="card_exp_year">Expiry year:</label>
+    <div>
+        <input type="number" id="card_exp_year" name="card_exp_year" value="2020" min="2016" placeholder="xxxx">
+    </div>
+    <label for="card_cvc">CVC:</label>
+    <div>
+        <input type="text" id="card_cvc" name="card_cvc" value="222" min="3" max="3" placeholder="xxx">
+    </div>
+
+    <br>
+
+    <input id="submit-order" type="button" disabled value="Create new order"
+           onclick="submitForm(['customer_name', 'customer_email',
+                                'product_name', 'product_price',
+                                'card_number', 'card_cvc', 'card_exp_month', 'card_exp_year']);">
+</form>
+<div>
+    <pre id="last-order">No order yet</pre>
+</div>
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
+<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
